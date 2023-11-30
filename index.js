@@ -1,5 +1,6 @@
 const express =  require("express");
 const app = express();
+const port = process.env.PORT || 5002;
 const mongoose = require("mongoose");
 const cors = require("cors");
 const multer = require('multer');
@@ -7,6 +8,7 @@ const path = require("path");
 const productRoute = require("./Routes/product");
 const paymentRoute = require("./Routes/payment");
 const orderRoute = require("./Routes/order");
+
 
 //const db = "mongodb://localhost:27017/Store"
 const db = "mongodb+srv://hasnan:hasnan023@cluster0.tugsl7l.mongodb.net/"
@@ -24,6 +26,6 @@ mongoose.connect(db,{}).then(()=>{
 }).catch((err)=> console.log("no connection"));
 
 
-app.listen(5002,()=>{
+app.listen(port,()=>{
     console.log("backend is running");
 })

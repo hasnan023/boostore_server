@@ -8,7 +8,8 @@ const productRoute = require("./Routes/product");
 const paymentRoute = require("./Routes/payment");
 const orderRoute = require("./Routes/order");
 
-const db = "mongodb://localhost:27017/Store"
+//const db = "mongodb://localhost:27017/Store"
+const db = "mongodb+srv://hasnan:hasnan@cluster0.tugsl7l.mongodb.net/"
 
 app.use("/uploads",express.static(path.join(__dirname,"uploads")));
 

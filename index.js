@@ -1,4 +1,5 @@
 const express =  require("express");
+const router = express.Router();
 const app = express();
 const port = process.env.PORT || 5002;
 const mongoose = require("mongoose");
@@ -11,10 +12,14 @@ const orderRoute = require("./Routes/order");
 
 
 //const db = "mongodb://localhost:27017/Store"
-const db = "mongodb+srv://hasnan:hasnan023@cluster0.tugsl7l.mongodb.net/"
+const db = "mongodb+srv://hasnan:hasnan023@cluster0.tugsl7l.mongodb.net/BookWorld"
+
+router.get("/",(req,res)=>{
+    res.send("Welcome to Book World");
+})
 
 app.use("/uploads",express.static(path.join(__dirname,"uploads")));
-
+app.use("/",router);
 app.use(cors());
 app.use(express.json());
 app.use("/api/product",productRoute);

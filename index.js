@@ -9,6 +9,7 @@ const path = require("path");
 const productRoute = require("./Routes/product");
 const paymentRoute = require("./Routes/payment");
 const orderRoute = require("./Routes/order");
+const userRoute = require("./Routes/user");
 
 
 //const db = "mongodb://localhost:27017/Store"
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use("/api/product",productRoute);
 app.use("/api/payments",paymentRoute);
 app.use("/api/order", orderRoute);
+app.use("/api/user",userRoute);
 
 mongoose.connect(db,{}).then(()=>{
     console.log("connection successful");
